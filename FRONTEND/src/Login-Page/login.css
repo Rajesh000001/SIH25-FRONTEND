@@ -207,6 +207,11 @@
   #pic {
     height: 200px;
   }
+
+  .roles{
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 480px) {
@@ -230,5 +235,10 @@
   .bottom-loginPage {
     flex-direction: column;
     gap: 8px;
+  }
+
+  .roles{
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
