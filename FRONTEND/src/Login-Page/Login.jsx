@@ -9,19 +9,21 @@ export function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [userError, setUserError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [role, setRole] = useState("Operator");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (emailPattern.test({ username })) {
+    if (emailPattern.test(username)) {
       localStorage.setItem("email", email);
     } else {
       localStorage.setItem("username", username);
     }
 
     localStorage.setItem("password", password);
+    localStorage.setItem("role", role);
 
     let isValid = true;
 
@@ -48,7 +50,31 @@ export function Login() {
     <div className="loginPage">
       <div id="container">
         <div id="loginbox">
+          <div className="roles">
+            <button
+              id="Admin"
+              className="role"
+              onClick={(e) => setRole(e.target.innerText)}
+            >
+              Admin
+            </button>
+            <button
+              id="Operator"
+              className="role"
+              onClick={(e) => setRole(e.target.innerText)}
+            >
+              Operator
+            </button>
+            <button
+              id="Judge"
+              className="role"
+              onClick={(e) => setRole(e.target.innerText)}
+            >
+              Judge
+            </button>
+          </div>
           <div id="login">Login</div>
+
           <form onSubmit={handleSubmit}>
             <div id="inputbox">
               <div className="input">
@@ -82,7 +108,7 @@ export function Login() {
             </div>
             <div className="submit">
               <div className="submitbox">
-                <button type="submit">Login</button>
+                <button type="submit">Login as {role}</button>
               </div>
             </div>
           </form>
