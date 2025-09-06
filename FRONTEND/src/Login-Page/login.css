@@ -36,17 +36,18 @@
   flex-direction: column;
   justify-content: center; /* keeps rest centered */
   padding: 50px;
-  position: relative; /* important! */
+  position: relative; 
 }
 
 .roles {
   position: absolute;
-  display: flex;
-  height: 10%;
   top: 20px;
-  left: 50px;
+
+  display: flex;
+  justify-content: center;  
   gap: 10px;
 }
+
 
 .role{
   background-color: #0056b3;
