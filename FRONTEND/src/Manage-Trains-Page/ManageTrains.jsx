@@ -86,7 +86,7 @@ export function ManageTrains(){
 
   return (
     <div className='container'>
-        <h1>Manage Trains</h1>
+        <h1 className='manage-trains-heading'>Manage Trains</h1>
         <div className='filter-container'>
         <label>Filter By Status:</label>
         <select className='filter-by-status' name='filterByStatus' onChange={(e) => filterByStatus(e)}>

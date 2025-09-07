@@ -67,7 +67,7 @@ export function ManageTrack(){
 
   return (
     <div className='container'>
-        <h1>Track Status Board</h1>
+        <h1 className='track-status-heading'>Track Status Board</h1>
         <div className='filter-container'>
         <label>Filter By State:</label>
         <select className='filter-by-state' name='filterByState' onChange={(e) => filterByState(e)}>

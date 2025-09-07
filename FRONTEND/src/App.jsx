@@ -6,6 +6,8 @@ import {ManageStations} from "./Manage-Station/ManageStations.jsx";
 import {ManageTrack} from "./Manage-Track-Page/ManageTrack.jsx";
 import {ManageTrains} from "./Manage-Trains-Page/ManageTrains.jsx";
 import {MockMode} from "./Mock-Mode-Page/MockMode.jsx";
+import {ConflictsDisruption} from "./Conflicts-Disruptions-Page/ConflictDisruption.jsx"
+import {DataAnalytics} from "./Data-Analytics-Page/DataAnalytics.jsx"
 import {ScenarioModeling} from "./Scenario-Modeling-Page/ScenarioModeling.jsx";
 import {Layout} from "./Layout.jsx";
 function App() {
@@ -20,8 +22,8 @@ function App() {
           <Route path='/Manage+Trains' element={<ManageTrains/>} />
           <Route path='/Manage+Tracks' element={<ManageTrack/>} />
           <Route path='/Manage+Stations' element={<ManageStations/>} />
-          <Route path='/Conflicts+Disruptions' element={<ManageStations/>} />
-          <Route path='/Data+Analytics' element={<ManageStations/>} />
+          <Route path='/Conflicts+Disruptions' element={<ConflictsDisruption/>} />
+          <Route path='/Data+Analytics' element={<DataAnalytics/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/forgot-password' element={<ForgotPassword/>} />
         </Route>

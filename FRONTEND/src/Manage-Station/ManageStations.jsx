@@ -69,7 +69,7 @@ export function ManageStations(){
 
   return (
     <div className='container'>
-        <h1>Station Status Board</h1>
+        <h1 className='station-status-heading'>Station Status Board</h1>
         <div className='filter-container'>
         <label>Change Station:</label>
         <select className='change-station' name='changeStation' onChange={(e) => handleStationChange(e)}>

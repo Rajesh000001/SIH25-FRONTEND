@@ -125,7 +125,7 @@ td {
 }
 
 /* h1 styling */
-h1 {
+.track-status-heading{
   font-size: 2.5rem;
   font-weight: 800;
   color: #3498db;
