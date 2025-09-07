@@ -40,21 +40,46 @@
 }
 
 .roles {
-  position: absolute;
-  top: 20px;
-
   display: flex;
-  justify-content: center;  
-  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-
-.role{
-  background-color: #0056b3;
-  color: white;
-  padding: 15px;
-  border-radius: 25px;
+.role {
+  padding: 8px 20px;
+  margin: 0 5px;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  background-color: white;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+   /* Prevent default highlight/opacity change */
+  outline: none;         /* remove default outline */
+  -webkit-tap-highlight-color: transparent; /* mobile */
 }
+
+.role:hover {
+  transform: scale(1.05);
+}
+
+.role:active {
+  color: #fff;
+}
+
+.active-role {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  transform: none; /* prevent shrinking */
+}
+
+.active-role:active {
+  color: #fff; /* keep white text on click */
+  background-color: #007bff; /* keep green bg */
+  transform: none;
+}
+
 
 
 

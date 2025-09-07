@@ -14,24 +14,12 @@ export function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (emailPattern.test(username)) {
-      localStorage.setItem("email", email);
-    } else {
-      localStorage.setItem("username", username);
-    }
-
-    localStorage.setItem("password", password);
-    localStorage.setItem("role", role);
-
     let isValid = true;
-
     setUserError("");
     setPasswordError("");
 
     if (!username.trim()) {
-      setUserError("*Username required");
+      setUserError("*Username or Email required");
       isValid = false;
     }
 
@@ -40,41 +28,42 @@ export function Login() {
       isValid = false;
     }
 
-    if (isValid) {
-      console.log("username: ", username);
-      console.log("password: ", password);
+    if (!isValid) return;
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailPattern.test(username)) {
+      localStorage.setItem("email", username);
+    } else {
+      localStorage.setItem("username", username);
     }
+
+    localStorage.setItem("password", password);
+    localStorage.setItem("role", role);
+
+    console.log("Login success:", { username, password, role });
   };
 
   return (
     <div className="loginPage">
       <div id="container">
         <div id="loginbox">
+          {/* Role Selection */}
           <div className="roles">
-            <button
-              id="Admin"
-              className="role"
-              onClick={(e) => setRole(e.target.innerText)}
-            >
-              Admin
-            </button>
-            <button
-              id="Operator"
-              className="role"
-              onClick={(e) => setRole(e.target.innerText)}
-            >
-              Operator
-            </button>
-            <button
-              id="Judge"
-              className="role"
-              onClick={(e) => setRole(e.target.innerText)}
-            >
-              Judge
-            </button>
+            {["Admin", "Operator", "Judge"].map((r) => (
+              <button
+                key={r}
+                className={`role ${role === r ? "active-role" : ""}`}
+                onClick={() => setRole(r)}
+              >
+                {r}
+              </button>
+            ))}
           </div>
+
           <div id="login">Login</div>
 
+          {/* Form */}
           <form onSubmit={handleSubmit}>
             <div id="inputbox">
               <div className="input">
@@ -87,6 +76,7 @@ export function Login() {
                 />
               </div>
               {userError && <p className="error-message">{userError}</p>}
+
               <div className="input">
                 <i className="fa-solid fa-lock"></i>
                 <input
@@ -106,21 +96,26 @@ export function Login() {
                 <p className="error-message">{passwordError}</p>
               )}
             </div>
+
             <div className="submit">
               <div className="submitbox">
                 <button type="submit">Login as {role}</button>
               </div>
             </div>
           </form>
+
+          {/* Bottom Links */}
           <div className="bottom-loginPage">
             <div id="forget-password">
               <Link to="/forgot-password">Forgot password?</Link>
             </div>
             <div id="signup">
-              Don't have an account?<Link to="/signup">Sign up</Link>
+              Don't have an account? <Link to="/signup">Sign up</Link>
             </div>
           </div>
         </div>
+
+        {/* Side Image */}
         <div id="pic">
           <img src={train} alt="Train" />
         </div>
