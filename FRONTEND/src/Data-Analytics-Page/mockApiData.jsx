@@ -1,0 +1,190 @@
+const mockApiData = {
+  Today: {
+    kpi_cards: [
+      {
+        id: 1,
+        label: "Trains On Time",
+        value: "125",
+        unit: "",
+        trend: "5%",
+        trend_direction: "up",
+      },
+      {
+        id: 2,
+        label: "Delayed Trains",
+        value: "8",
+        unit: "",
+        trend: "10%",
+        trend_direction: "down",
+      },
+      {
+        id: 3,
+        label: "Conflicts Avoided",
+        value: "20",
+        unit: "",
+        trend: "15%",
+        trend_direction: "up",
+      },
+      {
+        id: 4,
+        label: "Average Delay (min)",
+        value: "12",
+        unit: "min",
+        trend: "2%",
+        trend_direction: "down",
+      },
+    ],
+    track_heatmap_data: [
+      { name: "Track A", usage: 0.85 },
+      { name: "Track B", usage: 0.65 },
+      { name: "Track C", usage: 0.45 },
+      { name: "Track D", usage: 0.25 },
+      { name: "Track E", usage: 0.95 },
+    ],
+    delay_cause_analysis: [
+      { name: "Signal Failure", incidents: 5 },
+      { name: "Weather", incidents: 2 },
+      { name: "Mechanical", incidents: 3 },
+      { name: "Other", incidents: 1 },
+    ],
+    conflict_trend: {
+      labels: ["6 AM", "9 AM", "12 PM", "3 PM", "6 PM", "9 PM"],
+      data: [2, 5, 3, 6, 4, 2],
+    },
+    engine_health: {
+      cpu_load_percent: 45,
+      avg_response_time_ms: 120,
+      api_status: [
+        { name: "Engine API", status: "online" },
+        { name: "Train API", status: "degraded" },
+        { name: "Track API", status: "online" },
+      ],
+    },
+  },
+  "Last 60 Minutes": {
+    kpi_cards: [
+      {
+        id: 1,
+        label: "Trains On Time",
+        value: "22",
+        unit: "",
+        trend: "2%",
+        trend_direction: "up",
+      },
+      {
+        id: 2,
+        label: "Delayed Trains",
+        value: "1",
+        unit: "",
+        trend: "0%",
+        trend_direction: "down",
+      },
+      {
+        id: 3,
+        label: "Conflicts Avoided",
+        value: "4",
+        unit: "",
+        trend: "10%",
+        trend_direction: "up",
+      },
+      {
+        id: 4,
+        label: "Average Delay (min)",
+        value: "10",
+        unit: "min",
+        trend: "1%",
+        trend_direction: "down",
+      },
+    ],
+    track_heatmap_data: [
+      { name: "Track A", usage: 0.8 },
+      { name: "Track B", usage: 0.5 },
+      { name: "Track C", usage: 0.4 },
+      { name: "Track D", usage: 0.3 },
+      { name: "Track E", usage: 0.9 },
+    ],
+    delay_cause_analysis: [
+      { name: "Signal Failure", incidents: 2 },
+      { name: "Weather", incidents: 0 },
+      { name: "Mechanical", incidents: 1 },
+      { name: "Other", incidents: 0 },
+    ],
+    conflict_trend: {
+      labels: ["10:00", "10:15", "10:30", "10:45", "11:00", "11:15"],
+      data: [1, 2, 1, 3, 2, 1],
+    },
+    engine_health: {
+      cpu_load_percent: 40,
+      avg_response_time_ms: 110,
+      api_status: [
+        { name: "Engine API", status: "online" },
+        { name: "Train API", status: "online" },
+        { name: "Track API", status: "online" },
+      ],
+    },
+  },
+  "Last 7 Days": {
+    kpi_cards: [
+      {
+        id: 1,
+        label: "Trains On Time",
+        value: "830",
+        unit: "",
+        trend: "3%",
+        trend_direction: "up",
+      },
+      {
+        id: 2,
+        label: "Delayed Trains",
+        value: "56",
+        unit: "",
+        trend: "5%",
+        trend_direction: "down",
+      },
+      {
+        id: 3,
+        label: "Conflicts Avoided",
+        value: "120",
+        unit: "",
+        trend: "12%",
+        trend_direction: "up",
+      },
+      {
+        id: 4,
+        label: "Average Delay (min)",
+        value: "14",
+        unit: "min",
+        trend: "1%",
+        trend_direction: "down",
+      },
+    ],
+    track_heatmap_data: [
+      { name: "Track A", usage: 0.9 },
+      { name: "Track B", usage: 0.7 },
+      { name: "Track C", usage: 0.6 },
+      { name: "Track D", usage: 0.4 },
+      { name: "Track E", usage: 0.95 },
+    ],
+    delay_cause_analysis: [
+      { name: "Signal Failure", incidents: 15 },
+      { name: "Weather", incidents: 8 },
+      { name: "Mechanical", incidents: 12 },
+      { name: "Other", incidents: 5 },
+    ],
+    conflict_trend: {
+      labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      data: [15, 18, 12, 20, 16, 10, 12],
+    },
+    engine_health: {
+      cpu_load_percent: 50,
+      avg_response_time_ms: 130,
+      api_status: [
+        { name: "Engine API", status: "online" },
+        { name: "Train API", status: "online" },
+        { name: "Track API", status: "degraded" },
+      ],
+    },
+  },
+};
+
+export default mockApiData;
