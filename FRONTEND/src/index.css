@@ -9,7 +9,8 @@ body {
   height: 500px;
   width: 80%;
   max-width: 900px;
-  margin: 0 auto;   /* centers horizontally */
+  margin: 0 auto;
+  margin-top: 40px;
   border: 2px solid #ccc;  /* optional */
   border-radius: 12px;
   overflow: hidden;
